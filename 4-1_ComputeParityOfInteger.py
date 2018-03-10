@@ -52,4 +52,4 @@ if __name__ == "__main__":
     for i in range(-1 * (2**64 - 1), 2**64 - 1):
         if naive_parity(i) != test.compute_parity(i):
             # If we failed, notify and display value
-            print("Failed:", bin(i))
+            print("Failed:", i)
