@@ -39,12 +39,12 @@ if __name__ == "__main__":
     profit = calculate_max_gain(stock_price)
     print(profit == 80)  # should be 80
 
-    # Test 3
+    # Test 4
     stock_price = [300, 255, 220, 100]
     profit = calculate_max_gain(stock_price)
     print(profit == 0)  # should be 0
 
-    # Test 3
+    # Test 4
     stock_price = [200, 300, 180, 210]
     profit = calculate_max_gain(stock_price)
     print(profit == 100)  # should be 100
