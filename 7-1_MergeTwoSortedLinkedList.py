@@ -33,7 +33,7 @@ def merge_two_lists(l1, l2):
             point.next = node(l1.value)
             point = point.next
             l1 = l1.next
-        elif not l1 and l2:
+        else:
             point.next = node(l2.value)
             point = point.next
             l2 = l2.next
