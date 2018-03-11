@@ -43,18 +43,20 @@ class stack(object):
 
         return self._max
 
-# Test
-test = stack()
-print(len(test) == 0)
-test.push(13)
-test.push(2)
-test.push(333)
-test.push(33)
-print(len(test))
-print("max", test.max())
-print(test.pop())
-print(test.pop())
-print(test.pop())
-print(test.pop())
-print(test.pop())
-print("max", test.max())
+
+if __name__ == "__main__":
+    # Test
+    test = stack()
+    print(len(test) == 0)
+    test.push(13)
+    test.push(2)
+    test.push(333)
+    test.push(33)
+    print(len(test))
+    print("max", test.max())
+    print(test.pop())
+    print(test.pop())
+    print(test.pop())
+    print(test.pop())
+    print(test.pop())
+    print("max", test.max())
