@@ -51,12 +51,41 @@ class BST(object):
             pointer = pointer.left
         return pointer.value
 
+    def height_helper(self, pointer):
+        if pointer is None:
+            return 0
+        elif pointer.left is None and pointer.right is None:
+            return 1
+        else:
+            left = 1 + self.height_helper(pointer.left)
+            right = 1 + self.height_helper(pointer.right)
+            return left if left > right else right
+
+    def height(self):
+        return self.height_helper(self.head) - 1
+
+    def is_height_balanced(self):
+
+        def height_balanced_helper(pointer):
+            if pointer is None:
+                return True
+
+            left = self.height_helper(pointer.left)
+            right = self.height_helper(pointer.right)
+
+            if abs(left-right) < 2:
+                return True and height_balanced_helper(pointer.left) and height_balanced_helper(pointer.right)
+            else:
+                return False
+
+        return height_balanced_helper(self.head)
+
+
 if __name__ == "__main__":
     # Test
     tree = BST()
-    values = [1,54,3,2,5,1,3,56,3,7,5,4,3,0,2,5,5]
+    values = [5,3,2,4,1,7,9]
     for value in values:
         tree.insert(value)
 
-    print(tree.max())
-    print(tree.min())
+    print(tree.is_height_balanced())
