@@ -80,12 +80,23 @@ class BST(object):
 
         return height_balanced_helper(self.head)
 
+    def maximum_sum(self):
+
+        def maximum_sum_helper(pointer):
+            if pointer is None:
+                return 0
+            left = maximum_sum_helper(pointer.left)
+            right = maximum_sum_helper(pointer.right)
+            return pointer.value + max(left, right)
+
+        return maximum_sum_helper(self.head)
+
 
 if __name__ == "__main__":
     # Test
     tree = BST()
-    values = [5,3,2,4,1,7,9]
+    values = [5, 3, 2, 4, 1, 10]
     for value in values:
         tree.insert(value)
 
-    print(tree.is_height_balanced())
+    print(tree.maximum_sum())
