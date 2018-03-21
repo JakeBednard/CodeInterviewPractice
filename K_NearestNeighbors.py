@@ -1,16 +1,15 @@
 import heapq
 
 
-class Point:
-    def __init__(self, point):
-        self.point = point
-        self.distance = -1 * (point[0]**2 + point[1]**2)**(1/2)
-
-    def __lt__(self, other):
-        return self.distance < other.distance
-
-
 def k_nearest(points, n):
+
+    class Point:
+        def __init__(self, point):
+            self.point = point
+            self.distance = -1 * (point[0] ** 2 + point[1] ** 2) ** (1 / 2)
+
+        def __lt__(self, other):
+            return self.distance < other.distance
 
     heap = [Point((float('-inf'), float('-inf')))] * n
     heapq.heapify(heap)
